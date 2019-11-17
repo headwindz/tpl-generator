@@ -1,3 +1,3 @@
-# t-gen
+# tpl-generator
 
-Template generation with variables filling
+Template generator with variables filling

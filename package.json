@@ -1,7 +1,7 @@
 {
-  "name": "t-gen",
+  "name": "tpl-generator",
   "version": "0.0.1",
-  "description": "template generation with variables filling",
+  "description": "template generator with variables filling",
   "main": "index.ts",
   "scripts": {
     "start": "tsc && node dist/index.js",
