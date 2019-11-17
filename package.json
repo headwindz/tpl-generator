@@ -2,7 +2,7 @@
   "name": "tpl-generator",
   "version": "0.0.1",
   "description": "template generator with variables filling",
-  "main": "index.ts",
+  "main": "dist/index.js",
   "scripts": {
     "start": "tsc && node dist/index.js",
     "dev": "nodemon --watch 'src/**/*ts' --exec 'ts-node' src/index.ts",
@@ -10,6 +10,9 @@
   },
   "author": "n0ruSh",
   "license": "ISC",
+  "files": [
+    "dist"
+  ],
   "devDependencies": {
     "@types/fs-extra": "^8.0.1",
     "@types/node": "^12.12.8",
