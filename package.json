@@ -1,0 +1,23 @@
+{
+  "name": "t-gen",
+  "version": "0.0.1",
+  "description": "template generation with variables filling",
+  "main": "index.ts",
+  "scripts": {
+    "start": "tsc && node dist/index.js",
+    "dev": "nodemon --watch 'src/**/*ts' --exec 'ts-node' src/index.ts",
+    "pre-publish": "tsc"
+  },
+  "author": "n0ruSh",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/fs-extra": "^8.0.1",
+    "@types/node": "^12.12.8",
+    "ts-node": "^8.5.2",
+    "typescript": "^3.7.2"
+  },
+  "dependencies": {
+    "fs-extra": "^8.1.0",
+    "glob": "^7.1.6"
+  }
+}
