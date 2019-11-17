@@ -1,6 +1,6 @@
 {
   "name": "tpl-generator",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "template generator with variables filling",
   "main": "dist/index.js",
   "scripts": {
