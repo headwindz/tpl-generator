@@ -11,7 +11,8 @@ export default function main(props: TGenProps) {
 
   const files = glob.sync("**/*", {
     cwd: _from,
-    nodir: true
+    nodir: true,
+    dot: true
   });
 
   files.forEach(match => {
