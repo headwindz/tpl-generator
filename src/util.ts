@@ -1,5 +1,11 @@
 import path from 'path';
+import * as Handlebars from 'handlebars';
 import { Data } from './interface';
+
+Handlebars.registerHelper("toHyphen", function(str = '') {
+  const replacedStr = `${str.slice(0, 1)}${str.slice(1).replace(/([A-Z])/g, "-$1")}`;
+  return replacedStr.toLowerCase();
+});
 
 export const resolvePath = (_path: string) => {
   if(path.isAbsolute(_path)) {
@@ -8,15 +14,7 @@ export const resolvePath = (_path: string) => {
   return path.join(process.cwd(), _path);
 }
 
-const replacer = (data: Data) => (match: string, property: string) => {
-  const val = data[property];
-  if (val == null) {
-    return property;
-  }
-  return val;
-}
-
 export const resolveVariables = (content: string, data: Data) => {
-  const regexp = new RegExp(`\\{\\{([^(\}\})]*?)\\}\\}`, "g");
-  return content.replace(regexp, replacer(data))
+  const template = Handlebars.compile(content);
+  return template(data);
 }
