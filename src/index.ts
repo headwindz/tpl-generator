@@ -14,7 +14,6 @@ export default function main(props: TGenProps) {
     nodir: true,
     dot: true
   });
-  console.log(files)
   files.forEach(match => {
     const filePath = path.join(_from, match);
     const fileContent = fs.readFileSync(filePath, 'utf-8');
