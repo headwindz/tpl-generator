@@ -6,27 +6,21 @@ import glob from 'glob';
 
 export default function main(props: TGenProps) {
   const { from, to, data = {} } = props;
-
-  const [_from, _to ] = [from, to].map(resolvePath);
-
-  const files = glob.sync("**/*", {
+  const [_from, _to] = [from, to].map(resolvePath);
+  const files = glob.sync('**/*', {
     cwd: _from,
     nodir: true,
-    dot: true
+    dot: true,
   });
-  files.forEach(match => {
+  files.forEach((match) => {
     const filePath = path.join(_from, match);
     const fileContent = fs.readFileSync(filePath, 'utf-8');
-    
     const relative = path.relative(_from, filePath);
-    const destFilePath = resolveVariables(
-      path.join(_to, relative),
-      data
-    );
+    const destFilePath = resolveVariables(path.join(_to, relative), data);
     const destFileContent = resolveVariables(fileContent, data);
 
-    fs.outputFileSync(destFilePath, destFileContent)
-  })
+    fs.outputFileSync(destFilePath, destFileContent);
+  });
 }
 
 export { registerHelper };

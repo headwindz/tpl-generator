@@ -15,17 +15,23 @@
     "dist"
   ],
   "devDependencies": {
+    "@commitlint/cli": "^8.2.0",
+    "@commitlint/config-angular": "^8.2.0",
     "@types/fs-extra": "^8.0.1",
     "@types/jest": "^24.0.23",
     "@types/node": "^12.12.8",
+    "husky": "^3.1.0",
     "jest": "^24.9.0",
+    "lint-staged": "^9.5.0",
+    "prettier": "^1.19.1",
     "ts-jest": "^24.2.0",
-    "ts-node": "^8.5.2"
+    "ts-node": "^8.5.2",
+    "tslint": "^5.20.1"
   },
   "dependencies": {
-    "typescript": "^3.7.2",
     "fs-extra": "^8.1.0",
     "glob": "^7.1.6",
-    "handlebars": "^4.5.3"
+    "handlebars": "^4.5.3",
+    "typescript": "^3.7.2"
   }
 }

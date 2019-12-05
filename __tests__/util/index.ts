@@ -1,33 +1,34 @@
-import { resolvePath, resolveVariables, registerHelper  } from "../../src/util";
+import { resolvePath, resolveVariables, registerHelper } from '../../src/util';
 
 describe('resolvePath', () => {
-  test('should resolve relative path', () => {
+  test('should be able to resolve relative path', () => {
     expect(resolvePath('../../__tests__').startsWith('/')).toBeTruthy();
   });
 
-  test('should resolve absolute path', () => {
+  test('should be able resolve absolute path', () => {
     expect(resolvePath('/abc/__tests__')).toBe('/abc/__tests__');
   });
 });
 
-describe("resolveVarialbes", () => {
-  test("should resolve variables", () => {
+describe('resolveVarialbes', () => {
+  test('should resolve variables', () => {
     const content = resolveVariables(`Hello {{ title }}`, {
-      title: 'tpl-generator'
-    })
+      title: 'tpl-generator',
+    });
     expect(content).toBe('Hello tpl-generator');
   });
 });
 
-
-describe("registerHelper", () => {
+describe('registerHelper', () => {
   registerHelper('toHyphen', (str = '') => {
-    const replacedStr = `${str.slice(0, 1)}${str.slice(1).replace(/([A-Z])/g, "-$1")}`;
+    const replacedStr = `${str.slice(0, 1)}${str
+      .slice(1)
+      .replace(/([A-Z])/g, '-$1')}`;
     return replacedStr.toLowerCase();
-  })
+  });
 
   const content = resolveVariables(`Hello {{ toHyphen title }}`, {
-    title: 'TestAbc'
+    title: 'TestAbc',
   });
 
   expect(content).toBe('Hello test-abc');
