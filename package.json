@@ -6,7 +6,8 @@
   "scripts": {
     "start": "tsc && node dist/index.js",
     "dev": "nodemon --watch 'src/**/*ts' --exec 'ts-node' src/index.ts",
-    "pre-publish": "tsc"
+    "pre-publish": "tsc",
+    "test": "jest --config ./jest.json"
   },
   "author": "n0ruSh",
   "license": "ISC",
@@ -15,11 +16,14 @@
   ],
   "devDependencies": {
     "@types/fs-extra": "^8.0.1",
+    "@types/jest": "^24.0.23",
     "@types/node": "^12.12.8",
-    "ts-node": "^8.5.2",
-    "typescript": "^3.7.2"
+    "jest": "^24.9.0",
+    "ts-jest": "^24.2.0",
+    "ts-node": "^8.5.2"
   },
   "dependencies": {
+    "typescript": "^3.7.2",
     "fs-extra": "^8.1.0",
     "glob": "^7.1.6",
     "handlebars": "^4.5.3"

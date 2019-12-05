@@ -1,7 +1,7 @@
 import fs from 'fs-extra';
 import path from 'path';
 import TGenProps from './interface';
-import { resolvePath, resolveVariables } from './util';
+import { resolvePath, resolveVariables, registerHelper } from './util';
 import glob from 'glob';
 
 export default function main(props: TGenProps) {
@@ -22,9 +22,11 @@ export default function main(props: TGenProps) {
     const destFilePath = resolveVariables(
       path.join(_to, relative),
       data
-      );
+    );
     const destFileContent = resolveVariables(fileContent, data);
 
     fs.outputFileSync(destFilePath, destFileContent)
   })
 }
+
+export { registerHelper };

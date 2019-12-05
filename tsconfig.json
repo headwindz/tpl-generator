@@ -4,13 +4,16 @@
     "module": "commonjs",
     "rootDir": "src",
     "outDir": "dist",
+    "moduleResolution": "node",
     "sourceMap": true,
     "resolveJsonModule": true,
-    "lib": ["es6", "dom"],
-    "esModuleInterop": true
+    "lib": ["esnext", "dom"],
+    "esModuleInterop": true,
+    "baseUrl": ".",
   },
   "include": [
-    "src/**/*.ts"
+    "src/**/*.ts",
+    "__tests__/**/*"
   ],
   "exclude": [
     "node_modules"
