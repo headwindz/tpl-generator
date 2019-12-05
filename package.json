@@ -7,7 +7,8 @@
     "start": "tsc && node dist/index.js",
     "dev": "nodemon --watch 'src/**/*ts' --exec 'ts-node' src/index.ts",
     "prepublishOnly": "tsc",
-    "test": "jest --config ./jest.json"
+    "test": "jest --config ./jest.json",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
   },
   "author": "n0ruSh",
   "license": "ISC",
@@ -20,6 +21,7 @@
     "@types/fs-extra": "^8.0.1",
     "@types/jest": "^24.0.23",
     "@types/node": "^12.12.8",
+    "conventional-changelog-cli": "^2.0.28",
     "husky": "^3.1.0",
     "jest": "^24.9.0",
     "lint-staged": "^9.5.0",
