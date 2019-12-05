@@ -6,7 +6,7 @@
   "scripts": {
     "start": "tsc && node dist/index.js",
     "dev": "nodemon --watch 'src/**/*ts' --exec 'ts-node' src/index.ts",
-    "pre-publish": "tsc",
+    "prepublishOnly": "tsc",
     "test": "jest --config ./jest.json"
   },
   "author": "n0ruSh",
